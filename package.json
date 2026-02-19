@@ -1,0 +1,54 @@
+{
+  "name": "tiptap-redlines-extension",
+  "version": "1.0.0",
+  "description": "Track changes (redlines) extension for TipTap v3. Adds Microsoft Word-style revision tracking — insertions shown in color with underline, deletions shown with strikethrough.",
+  "keywords": [
+    "tiptap",
+    "tiptap-extension",
+    "tiptap-v3",
+    "track-changes",
+    "redlines",
+    "revision",
+    "prosemirror",
+    "rich-text-editor"
+  ],
+  "license": "MIT",
+  "author": "Christopher Sim",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christophersim/tiptap-redlines-extension.git"
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@tiptap/core": "^3.0.0",
+    "@tiptap/pm": "^3.0.0"
+  },
+  "devDependencies": {
+    "@tiptap/core": "^3.19.0",
+    "@tiptap/pm": "^3.19.0",
+    "@rollup/plugin-typescript": "^12.1.0",
+    "rollup": "^4.28.0",
+    "tslib": "^2.8.0",
+    "typescript": "^5.7.0"
+  }
+}
